@@ -6,3 +6,8 @@ CREATE TABLE vehiculos(
 	precio DOUBLE PRECISION NOT NULL,
 	color VARCHAR(30),
 	disponible BOOLEAN NOT NULL);
+
+	select * from vehiculos;
+
+	ALTER TABLE vehiculos
+	ADD kilometraje INT;

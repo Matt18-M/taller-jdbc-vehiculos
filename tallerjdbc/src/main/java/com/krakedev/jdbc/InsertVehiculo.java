@@ -22,21 +22,23 @@ public class InsertVehiculo {
 		PreparedStatement ps;
 
 		String sql = """
-				INSERT INTO vehiculos(placa,marca,modelo,anio,precio,color,disponible)
-				VALUES (?,?,?,?,?,?,?)
+				INSERT INTO vehiculos(placa,marca,modelo,anio,precio,color,disponible,kilometraje)
+				VALUES (?,?,?,?,?,?,?,?)
 				""";
 
 		try {
 			con = DriverManager.getConnection(URL, USER, PASSWORD);
 			ps = con.prepareStatement(sql);
 			
-			ps.setString(1,"PDB-8988");
+			ps.setString(1,"PDB-8986");
 			ps.setString(2, "Chevrolet");
 			ps.setString(3, "Aveo");
 			ps.setInt(4, 2009);
 			ps.setDouble(5, 7900);
 			ps.setString(6, "Plomo");
 			ps.setBoolean(7, false);
+			ps.setInt(8, 210000);
+			
 			
 			int filas = ps.executeUpdate();
 			log.info("Vehiculo insertado");

@@ -30,16 +30,16 @@ public class InsertVehiculo {
 			con = DriverManager.getConnection(URL, USER, PASSWORD);
 			ps = con.prepareStatement(sql);
 			
-			ps.setString(1,"PDB-8986");
+			ps.setString(1,"PDB-8988");
 			ps.setString(2, "Chevrolet");
 			ps.setString(3, "Aveo");
 			ps.setInt(4, 2009);
-			ps.setDouble(5, 7.900);
+			ps.setDouble(5, 7900);
 			ps.setString(6, "Plomo");
 			ps.setBoolean(7, false);
 			
 			int filas = ps.executeUpdate();
-			log.info("Conexión Exitosa");
+			log.info("Vehiculo insertado");
 			log.info("Filas insertadas: " + filas);
 			
 		} catch (SQLException e) {
